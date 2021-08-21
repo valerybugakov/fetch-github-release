@@ -1,6 +1,6 @@
 {
   "name": "fetch-github-release",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Fetch binary from Github releases for your platform",
   "repository": {
     "type": "git",
