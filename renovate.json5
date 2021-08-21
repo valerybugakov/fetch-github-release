@@ -1,0 +1,19 @@
+{
+  force: {
+    constraints: {
+      node: '< 15.0.0',
+    },
+  },
+  extends: ['config:base', 'schedule:weekly'],
+  rangeStrategy: 'update-lockfile',
+  automerge: true,
+  major: {
+    automerge: false,
+  },
+  lockFileMaintenance: {
+    enabled: true,
+  },
+  ignorePresets: [':prHourlyLimit2'],
+  semanticCommits: true,
+  dependencyDashboard: true,
+}
