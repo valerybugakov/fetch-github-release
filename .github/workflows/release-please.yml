@@ -7,24 +7,18 @@ jobs:
   release-please:
     runs-on: ubuntu-latest
     steps:
-      - uses: navikt/github-app-token-generator@v1
-        id: get-token
-        with:
-          private-key: ${{ secrets.PRIVATE_KEY }}
-          app-id: ${{ secrets.APP_ID }}
       - uses: GoogleCloudPlatform/release-please-action@v2
         id: release
         with:
-          token: ${{ steps.get-token.outputs.token }}
           release-type: node
-          package-name: 'fetch-github-release'
+          package-name: "fetch-github-release"
       - uses: actions/checkout@v2
         if: ${{ steps.release.outputs.release_created }}
       - uses: actions/setup-node@v2
         with:
-          node-version: '*'
+          node-version: "*"
           check-latest: true
-          registry-url: 'https://registry.npmjs.org'
+          registry-url: "https://registry.npmjs.org"
         if: ${{ steps.release.outputs.release_created }}
       - run: npm publish
         if: ${{ steps.release.outputs.release_created }}
