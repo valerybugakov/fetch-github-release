@@ -118,7 +118,7 @@ async function fetchRelease(options: FetchReleaseOptions): Promise<string[]> {
     const files = await decompress(downloadPath, destination)
     await rm(downloadPath)
 
-    return files.map((file) => path.join(destination, file.path))
+    return files.map((file: decompress.File) => path.join(destination, file.path))
   }
 
   return [downloadPath]
