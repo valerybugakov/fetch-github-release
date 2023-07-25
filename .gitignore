@@ -3,3 +3,4 @@ dist
 node_modules/
 .eslintcache
 .idea
+src/**/*.js
