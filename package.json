@@ -47,8 +47,8 @@
   ],
   "devDependencies": {
     "@babel/eslint-parser": "^7.15.0",
-    "@commitlint/cli": "^13.1.0",
-    "@commitlint/config-conventional": "^13.1.0",
+    "@commitlint/cli": "^17.6.7",
+    "@commitlint/config-conventional": "^17.6.7",
     "@types/download": "^8.0.0",
     "@types/jest": "^26.0.0",
     "@types/node": "^14.0.0",
@@ -59,6 +59,8 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.24.1",
     "eslint-plugin-prettier": "^3.4.1",
+    "expect-even-more-jest": "^1.18.0",
+    "filesystem-sandbox": "^1.24.0",
     "husky": "^7.0.0",
     "jest": "^27.0.0",
     "npm-run-all": "^4.1.5",
@@ -68,8 +70,9 @@
   },
   "dependencies": {
     "@octokit/rest": "^18.9.1",
+    "bent": "^7.3.12",
     "decompress": "^4.2.1",
-    "download": "^8.0.0",
-    "semver": "^7.0.0"
+    "semver": "^7.5.4",
+    "yafs": "^1.27.0"
   }
 }

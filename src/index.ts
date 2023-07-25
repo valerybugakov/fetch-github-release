@@ -1,2 +1,2 @@
-export { FetchReleaseOptions, fetchLatestRelease, fetchReleaseByTag } from './fetchRelease'
-export { isUpdateAvailable } from './isUpdateAvailable'
+export * from './fetchRelease'
+export * from './isUpdateAvailable'
