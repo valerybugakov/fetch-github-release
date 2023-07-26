@@ -1,2 +1,2 @@
-export * from './fetchRelease'
-export * from './isUpdateAvailable'
+export * from "./fetchRelease";
+export * from "./isUpdateAvailable";
