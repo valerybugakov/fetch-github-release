@@ -32,13 +32,13 @@ export function getAssetDefault(
 ): OctokitReleaseAssets[number] {
   const { platform, arch } = getPlatformIdentifier()
 
-  const platformAssets = assets.filter((asset) => asset.name.includes(platform))
+  const platformAssets = assets.filter((asset: { name: string }) => asset.name.includes(platform))
 
   if (platformAssets.length === 1) {
     return platformAssets[0]
   }
 
-  const archAsset = platformAssets.find((asset) => asset.name.includes(arch))
+  const archAsset = platformAssets.find((asset: { name: string }) => asset.name.includes(arch))
 
   if (!archAsset) {
     throw new Error(`Unable to find release for platform: ${platform} and arch: ${arch}`)
