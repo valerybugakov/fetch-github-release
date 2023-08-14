@@ -17,6 +17,35 @@ export async function isUpdateAvailable(options: IsUpdateAvailableOptions): Prom
   return newerVersion(latestVersion, currentVersion)
 }
 
+export interface FetchLatestReleaseOptions extends RepoInfo {
+  accessToken?: string;
+}
+
+export interface FetchLatestReleaseResult {
+  url: string;
+  id: number;
+  assets: any[];
+  name: string | null;
+  body?: string | null;
+  assets_url: string;
+  author: string;
+  body_html: string;
+  body_text: string;
+  created_at: string;
+  discussion_url: string;
+  draft: boolean;
+  html_url: string;
+  mentions_count: number;
+}
+
+export async function fetchLatestReleaseInfo(
+    opts: ListReleasesOptions
+): Promise<ReleaseInfo> {
+  const { repo, owner, accessToken } = opts;
+  const result = await new Octokit({ auth: accessToken }).repos.getLatestRelease({ owner, repo });
+  return result.data as ReleaseInfo;
+}
+
 export interface ListReleasesOptions extends RepoInfo {
   accessToken?: string;
 }
